@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  color: #333;
+}
+.app-body {
+  flex: 0.78;
+}

@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  color: #333;
+  border-bottom: 2px solid lightgray;
+}
+.header--title {
+  position: relative;
+  font-size: 2rem;
+  padding: 2.4rem;
+}
+.header--title::after {
+  content: "";
+  background-color: #333;
+  margin-left: 1rem;
+  padding: 1px;
+}
+.header--title::before {
+  content: "QUEUE MANAGEMENT SYSTEM";
+  position: absolute;
+  top: 2rem;
+  font-size: 1.6rem;
+  width: 25rem;
+  color: white;
+  background-color: #7950f2;
+  padding-left: 1.6rem;
+  margin-left: 22rem;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+}
+.header-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-right: 0.8rem;
+  color: white;
+  background-color: #7950f2;
+  border-radius: 50%;
+}
+.header-logout > * {
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+}

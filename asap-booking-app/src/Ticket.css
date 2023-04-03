@@ -1,0 +1,128 @@
+.ticket--header {
+  color: #444;
+  display: flex;
+  align-items: center;
+  padding: 2.4rem;
+  width: 98%;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 5.2rem;
+  border-bottom: 2px solid lightgray;
+}
+.ticket--menu {
+  flex: 0.25;
+  display: flex;
+  gap: 3rem;
+}
+.ticket--menuDesk {
+  position: relative;
+  flex: 0.25;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: 3rem;
+}
+.ticket--menuDesk::before,
+.ticket--menuAssignedService::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  height: 3rem;
+  background-color: lightgray;
+  margin-left: 1rem;
+  padding: 0.4px;
+}
+.ticket--menuDeskNumber {
+  border: none;
+  outline: 0;
+  width: 12rem;
+}
+.ticket--menuAssignedService {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+.ticket--body {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr;
+}
+.ticket--current {
+  font-size: 2.4rem;
+  padding: 0.8rem;
+  height: 13rem;
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.ticket--next,
+.ticket--cancle,
+.ticket--swap,
+.ticket--markDone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+}
+
+.ticket--swap {
+  background-color: #868e96;
+  width: 45%;
+}
+
+.ticket--next > *,
+.ticket--cancle > *,
+.ticket--swap > *,
+.ticket--markDone > * {
+  height: 8rem !important;
+  width: 8rem !important;
+}
+.ticket--update {
+  font-size: 2.4rem;
+  padding: 0.8rem;
+  background-color: #333542;
+  color: white;
+}
+
+.ticket--countInfo {
+  display: flex;
+  grid-column: 3/ 5;
+}
+.ticket--done,
+.ticket--remaining,
+.ticket--upcoming,
+.ticket--swapped {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  font-size: 2.4rem;
+  padding: 0.8rem;
+  margin-left: 1rem;
+  height: 13rem;
+  width: 80%;
+}
+.ticket--doneNumber,
+.ticket--remainingNumber,
+.ticket--upcomingNumber,
+.ticket--swappedNumber {
+  font-size: 4.8rem;
+  font-weight: 300;
+}
+
+.ticket--swapped::before,
+.ticket--upcoming::before,
+.ticket--remaining::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  padding: 0.5px;
+  height: 7rem;
+  background-color: lightgray;
+}
