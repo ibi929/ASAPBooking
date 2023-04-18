@@ -1,7 +1,6 @@
 .leftPane-container {
   flex: 0.18;
   height: 100vh;
-
   overflow-y: scroll;
   margin-right: 2rem;
   border-right: solid 1px rgba(0, 0, 0, 0.15);
@@ -17,7 +16,7 @@
 }
 .leftPane {
   background-color: #323542;
-  height: 130vh;
+  height: 105vh;
 }
 .leftPane--top {
   display: flex;
@@ -28,10 +27,17 @@
   border-bottom: 2px solid lightgray;
 }
 .leftPane--top > a > img {
-  width: 16rem;
-  height: 6rem;
+  width: 90%;
+  padding-left: 2rem;
   border-bottom: 4rem;
 }
 .leftPane--bottom {
   padding-top: 24px;
+}
+.leftPane--footer {
+  background-color: #323542;
+  padding: 3.2rem;
+  color: white;
+  font-size: 1.6rem;
+  border-top: 1px solid gray;
 }

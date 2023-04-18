@@ -1,12 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Ticket.css";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SwapHorizontalCircleOutlinedIcon from "@mui/icons-material/SwapHorizontalCircleOutlined";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
+import { onSnapshot, query, where } from "firebase/firestore";
+import { colRef } from "./Firebase";
 function Ticket() {
   const [checked, setChecked] = useState("");
+  const [countRemaining, setCountRemaining] = useState(0);
+  const [countDone, setCountDone] = useState(0);
+
+  useEffect(() => {
+    let totalRemaining = 0;
+    const queryRemaining = query(colRef, where("status", "==", "waiting"));
+    const unsubscribe = onSnapshot(queryRemaining, (snapshot) => {
+      snapshot.docs.map(() => {
+        setCountRemaining(totalRemaining++);
+      });
+    });
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    let totalDone = 0;
+    const queryDone = query(colRef, where("status", "==", "done"));
+    const unsubscribe = onSnapshot(queryDone, (snapshot) => {
+      snapshot.docs.map(() => {
+        setCountDone(totalDone++);
+      });
+    });
+    return unsubscribe;
+  }, []);
+  useEffect(() => {
+    // let totalDone = 0;
+    // const queryDone = query(colRef, where("status", "==", "done"));
+    // const unsubscribe = onSnapshot(queryDone, (snapshot) => {
+    //   snapshot.docs.map(() => {
+    //     setCountDone(totalDone++);
+    //   });
+    // });
+    // return unsubscribe;
+  }, []);
+
   return (
     <div className="ticket">
       <div className="ticket--header">
@@ -56,7 +93,7 @@ function Ticket() {
 
         <div className="ticket--done">
           <h2>Done</h2>
-          <h2 className="ticket--doneNumber">0</h2>
+          <h2 className="ticket--doneNumber">{countDone}</h2>
         </div>
         <div
           style={{ backgroundColor: checked ? "#82c91e" : "lightgray" }}
@@ -67,7 +104,7 @@ function Ticket() {
         <div className="ticket--countInfo">
           <div className="ticket--remaining">
             <h2> Remaining</h2>
-            <h2 className="ticket--remainingNumber"> 0</h2>
+            <h2 className="ticket--remainingNumber"> {countRemaining}</h2>
           </div>
           <div className="ticket--upcoming">
             <h2>Upcoming</h2>

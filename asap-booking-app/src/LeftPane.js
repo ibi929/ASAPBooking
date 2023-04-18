@@ -17,6 +17,7 @@ function LeftPane() {
           <PaneOptions Icon={ConfirmationNumberIcon} name="TICKET" />
         </div>
       </div>
+      <div className="leftPane--footer">ASAPBooking &copy; 2023</div>
     </div>
   );
 }
