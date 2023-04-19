@@ -18,6 +18,7 @@ function Ticket() {
     const unsubscribe = onSnapshot(queryRemaining, (snapshot) => {
       snapshot.docs.map(() => {
         setCountRemaining(totalRemaining++);
+        setCountRemaining(0);
       });
     });
     return unsubscribe;
