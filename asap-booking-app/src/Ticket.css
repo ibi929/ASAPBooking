@@ -48,13 +48,23 @@
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr;
 }
-.ticket--current {
+.ticket--current,
+.ticket--update {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
   font-size: 2.4rem;
   padding: 0.8rem;
   height: 13rem;
   width: 100%;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+.ticket--current > h2,
+.ticket--update > h2 {
+  font-weight: 300;
+  font-size: 5.2rem;
 }
 .ticket--next,
 .ticket--cancle,
@@ -95,7 +105,7 @@
 }
 .ticket--done,
 .ticket--remaining,
-.ticket--upcoming,
+.ticket--skipped,
 .ticket--swapped {
   position: relative;
   display: flex;
@@ -107,16 +117,23 @@
   height: 13rem;
   width: 80%;
 }
+.ticket--done > h2,
+.ticket--remaining > h2,
+.ticket--skipped > h2,
+.ticket--swapped > h2 {
+  font-weight: 400;
+}
+
 .ticket--doneNumber,
 .ticket--remainingNumber,
-.ticket--upcomingNumber,
+.ticket--skippedNumber,
 .ticket--swappedNumber {
   font-size: 4.8rem;
   font-weight: 300;
 }
 
 .ticket--swapped::before,
-.ticket--upcoming::before,
+.ticket--skipped::before,
 .ticket--remaining::before {
   content: "";
   position: absolute;

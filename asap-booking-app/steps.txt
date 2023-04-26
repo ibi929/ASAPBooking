@@ -1,0 +1,14 @@
+1.get ticket
+  a. service ID --> from services page,
+   customerID --> authUser.ID, 
+   timestamp, 
+   estimated time --> get all previous tickets in the same service that are waiting * service-task-completion-time, 
+   ticket number --> get serivce letter + get all previous waiting tickets in the same service.length + 1, 
+   comments -> comment box
+
+2. current ticket
+
+
+3. when DONE is clicked
+
+  a. current tickets status change from serving to completed
