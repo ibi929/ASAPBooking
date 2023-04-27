@@ -48,6 +48,7 @@
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr;
 }
+
 .ticket--current,
 .ticket--update {
   display: flex;
@@ -65,6 +66,11 @@
 .ticket--update > h2 {
   font-weight: 300;
   font-size: 5.2rem;
+}
+
+.ticket--next {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
 }
 .ticket--next,
 .ticket--cancle,
