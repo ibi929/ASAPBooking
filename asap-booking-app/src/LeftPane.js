@@ -13,8 +13,6 @@ function LeftPane() {
         </div>
         <div className="leftPane--bottom">
           <PaneOptions Icon={ConfirmationNumberIcon} name="TICKET" />
-          <PaneOptions Icon={ConfirmationNumberIcon} name="TICKET" />
-          <PaneOptions Icon={ConfirmationNumberIcon} name="TICKET" />
         </div>
       </div>
       <div className="leftPane--footer">ASAPBooking &copy; 2023</div>
