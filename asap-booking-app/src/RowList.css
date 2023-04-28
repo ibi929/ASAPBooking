@@ -1,0 +1,30 @@
+.rowList > td {
+  padding: 1rem 0.4rem 2rem 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  border-bottom: 1px solid lightgray;
+}
+.rowList:nth-child(even) {
+  background-color: #e5dbff;
+}
+.rowList:nth-child(odd) {
+  background-color: #f3f0ff;
+}
+
+.num {
+  width: 5%;
+}
+.ticketNumber {
+  width: 8%;
+}
+.serviceType {
+  width: 20%;
+}
+.status {
+  width: 10%;
+}
+.createdAt {
+  width: 22%;
+}
+.comments {
+}

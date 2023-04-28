@@ -3,8 +3,10 @@ import "./PaneOptions.css";
 function PaneOptions({ name, Icon }) {
   return (
     <div className="paneOptions">
-      <Icon className="paneOptions--icon" />
-      <h2 className="paneOptions--iconName">{name}</h2>
+      <button>
+        <Icon className="paneOptions--icon" />
+        <h2 className="paneOptions--iconName">{name}</h2>
+      </button>
     </div>
   );
 }

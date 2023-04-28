@@ -1,0 +1,89 @@
+.ticketList {
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  position: relative;
+}
+/* styling ticketList menue */
+.ticketList--header {
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  padding: 2.4rem;
+  width: 100%;
+  font-size: 4.8rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid lightgray;
+}
+.ticketList--menuName {
+  flex: 0.25;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.menuName {
+  padding: 0.8rem 2.4rem;
+  background-color: #7950f2;
+  color: white;
+  border-radius: 40px;
+}
+/* styling the desk, and the Ticket status dropedown menues */
+.ticketList--menuDesk,
+.ticketList--menuTicketStatus {
+  position: relative;
+  flex: 0.25;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: 3rem;
+}
+.ticketList--menuTicketStatus {
+  flex-grow: 1;
+}
+.ticketList--menuTicketStatus::before,
+.ticketList--menuDesk::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  height: 3rem;
+  background-color: lightgray;
+  margin-left: 1rem;
+  padding: 0.4px;
+}
+.ticketList--menuDeskNumber,
+.ticketList--menuTicketStatusNumber {
+  border: none;
+  outline: 0;
+  width: 12rem;
+}
+
+/* styling the table */
+.ticketList--table {
+  border-spacing: 0.4rem;
+  height: 20rem;
+  overflow: auto;
+}
+.table--header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.theader--row {
+  /* background-color: #e0e2e6; */
+  background-color: #7950f2;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.theader--row > th {
+  width: 40rem;
+  padding: 1.6rem;
+}
+
+.table--body {
+  max-height: 100vh;
+  overflow: scroll;
+  /* background-color: red; */
+}

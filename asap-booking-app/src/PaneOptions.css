@@ -1,17 +1,33 @@
 .paneOptions {
-  font-size: 2.4rem;
   padding: 2rem 2rem 0.2rem 0;
   display: flex;
   align-items: center;
   border-bottom: 1px solid gray;
-  margin-left: 3rem;
+  margin-left: 2.4rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   color: white;
+}
+
+.paneOptions > button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.paneOptions > button:hover {
+  color: #7950f2;
 }
 .paneOptions--icon {
   width: 2.4rem !important;
   height: 2.4rem !important;
 }
 .paneOptions--iconName {
-  margin-left: 2rem;
+  margin-left: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
