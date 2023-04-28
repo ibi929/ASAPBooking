@@ -1,7 +1,10 @@
 .app {
   display: flex;
   color: #333;
+  height: 100vh;
+  overflow: hidden;
 }
 .app-body {
   flex: 0.78;
+  position: relative;
 }

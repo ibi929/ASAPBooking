@@ -1,3 +1,7 @@
+.ticket {
+  /* background-color: rgba(137, 43, 226, 0.459); */
+  width: 100%;
+}
 .ticket--header {
   color: #444;
   display: flex;
