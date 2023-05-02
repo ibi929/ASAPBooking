@@ -69,8 +69,8 @@ function TicketList() {
       // updattting the ticketsArray with the latest tickets list.
       setTicketsArray(tickets);
 
-      console.log("************************");
-      console.log(statusType);
+      // console.log("************************");
+      // console.log(statusType);
       // getting the name of the service based on the service id (selected from the `desk:` drop down)
       const servicesColRef = doc(db, "services", serviceID);
       getDoc(servicesColRef).then((service) =>
@@ -80,6 +80,20 @@ function TicketList() {
 
     return unsubscribe;
   }, [serviceID, statusType]);
+
+  const [servicesArray, setServicesArray] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(servicesColRef, (service) => {
+      let services = [];
+      service.docs.forEach((doc) => {
+        services.push({ ...doc.data(), id: doc.id });
+      });
+      setServicesArray(services);
+    });
+    console.log(servicesArray);
+    return unsubscribe;
+  }, []);
 
   return (
     <div className="ticketList">
@@ -91,16 +105,21 @@ function TicketList() {
         </div>
 
         {/* dropedown menue for filtering by ticket service Desk */}
-        <div className="ticketList--menuDesk">
-          <h2 className="ticketList--menuDeskName"> Desk:</h2>
+        <div className="ticketList--menuService">
+          <h2 className="ticketList--menuServiceName"> Service:</h2>
           <select
-            className="ticketList--menuDeskNumber"
+            className="ticketList--menuServiceNumber"
             onChange={(e) => setServiceID(e.target.value)}
             value={serviceID}
           >
-            <option value="1">1</option>
+            {servicesArray.map((service) => (
+              <option key={service.id} value={service.id}>
+                {service.service_name}
+              </option>
+            ))}
+            {/* <option value="1">1</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3</option> */}
           </select>
         </div>
 
@@ -126,7 +145,7 @@ function TicketList() {
           <tr className="theader--row">
             <th>#</th>
             <th>Ticket Number</th>
-            <th>Service/Desk</th>
+            <th>Service</th>
             <th>Status</th>
             <th>Created At</th>
             <th> Comment</th>

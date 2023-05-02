@@ -36,6 +36,8 @@ function Ticket() {
   const [skippedTickets, setSkippedTickets] = useState([]);
   const [swappedTickets, setSwappedTickets] = useState([]);
 
+  const [servicesArray, setServicesArray] = useState([]);
+
   useEffect(() => {
     // querying the tickets collection.
     const queryTickets = query(
@@ -50,7 +52,7 @@ function Ticket() {
       where("serviceId", "==", serviceID)
     );
 
-    // subscribing to a realtime listener in the database in order to retrieve data.
+    // subscribing to a realtime listener in the tickets collection in order to retrieve data.
     const unsubscribe = onSnapshot(queryTickets, (snapshot) => {
       let totalRemaining = 0;
       let totalDone = 0;
@@ -96,21 +98,27 @@ function Ticket() {
       setTicketCurrrent(waitingTickets[0]);
       setTicketNext(waitingTickets[1]);
 
-      console.log(waitingTickets);
-      console.log("************************");
-      console.log(doneTickets);
-      console.log(swappedTickets);
-      console.log(skippedTickets);
+      // console.log(waitingTickets);
+      // console.log("************************");
+      // console.log(doneTickets);
+      // console.log(swappedTickets);
+      // console.log(skippedTickets);
     });
 
     return unsubscribe;
   }, [serviceID]);
 
   useEffect(() => {
-    console.log(ticketCurrent);
-    console.log("######################");
-    console.log(ticketNext);
-  }, [waitingTickets]);
+    const unsubscribe = onSnapshot(servicesColRef, (service) => {
+      let services = [];
+      service.docs.forEach((doc) => {
+        services.push({ ...doc.data(), id: doc.id });
+      });
+      setServicesArray(services);
+    });
+    console.log(servicesArray);
+    return unsubscribe;
+  }, []);
 
   const handleNextTicket = () => {
     const ticketCurrentId = ticketCurrent?.id;
@@ -156,16 +164,21 @@ function Ticket() {
             checked={checked ? "checked" : ""}
           />
         </div>
-        <div className="ticket--menuDesk">
-          <h2 className="ticket--menuDeskName"> Desk:</h2>
+        <div className="ticket--menuService">
+          <h2 className="ticket--menuServiceName"> Service:</h2>
           <select
-            className="ticket--menuDeskNumber"
+            className="ticket--menuServiceNumber"
             onChange={(e) => setServiceID(e.target.value)}
             value={serviceID}
           >
-            <option value="1">1</option>
+            {servicesArray.map((service) => (
+              <option key={service.id} value={service.id}>
+                {service.service_name}
+              </option>
+            ))}
+            {/* <option value="1">1</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3</option> */}
           </select>
         </div>
         <div className="ticket--menuAssignedService">
@@ -221,10 +234,10 @@ function Ticket() {
             <h2>Skipped</h2>
             <h2 className="ticket--skippedNumber"> {countSkipped}</h2>
           </div>
-          <div className="ticket--swapped">
+          {/* <div className="ticket--swapped">
             <h2>Swapped</h2>
             <h2 className="ticket--swappedNumber"> {countSwapped}</h2>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

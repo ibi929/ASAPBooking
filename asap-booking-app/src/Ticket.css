@@ -18,7 +18,7 @@
   display: flex;
   gap: 3rem;
 }
-.ticket--menuDesk {
+.ticket--menuService {
   position: relative;
   flex: 0.25;
   display: flex;
@@ -26,7 +26,7 @@
   gap: 2.4rem;
   margin-left: 3rem;
 }
-.ticket--menuDesk::before,
+.ticket--menuService::before,
 .ticket--menuAssignedService::before {
   content: "";
   position: absolute;
@@ -36,10 +36,10 @@
   margin-left: 1rem;
   padding: 0.4px;
 }
-.ticket--menuDeskNumber {
+.ticket--menuServiceNumber {
   border: none;
   outline: 0;
-  width: 12rem;
+  width: 18rem;
 }
 .ticket--menuAssignedService {
   display: flex;
@@ -93,6 +93,10 @@
 .ticket--swap {
   background-color: #868e96;
   width: 45%;
+  display: none;
+}
+.ticket--swapped {
+  display: none;
 }
 
 .ticket--next > *,
@@ -111,8 +115,12 @@
 
 .ticket--countInfo {
   display: flex;
-  grid-column: 3/ 5;
+  grid-column: 3/ 4;
 }
+.ticket--done {
+  grid-column: 1;
+}
+
 .ticket--done,
 .ticket--remaining,
 .ticket--skipped,
@@ -152,4 +160,11 @@
   padding: 0.5px;
   height: 7rem;
   background-color: lightgray;
+}
+
+.ticket--next:hover {
+  background-color: #12b886 !important;
+}
+.ticket--cancle:hover {
+  background-color: #ff6b6b !important;
 }

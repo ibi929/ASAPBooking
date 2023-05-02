@@ -1,0 +1,91 @@
+.ticketService {
+}
+.ticketService--header {
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  padding: 2.4rem;
+  width: 100%;
+  font-size: 4.8rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid lightgray;
+}
+.ticketService--menuName {
+  flex: 0.25;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* styling the table */
+.ticketService--table {
+  margin-top: 2.4rem;
+  border-spacing: 0.4rem;
+  height: 20rem;
+  overflow: auto;
+  position: relative;
+}
+/* styling input fields */
+.input--wrapper {
+  padding: 0.6rem;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  min-width: 22rem;
+}
+.input {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.8rem 0.8rem;
+  font-size: 1.6rem;
+}
+.input::placeholder {
+  color: #ced4da;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+.btn--addService {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  top: 18rem;
+  right: 0;
+  border: none;
+  height: 4rem;
+  width: 8rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  color: white;
+  border-radius: 10%;
+  background-color: #339af0;
+  z-index: 999;
+}
+.btn--addService > * {
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+}
+.btn--addService > p {
+  font-size: 1.6rem;
+}
+.btn--addService:hover {
+  background-color: #4dabf7;
+}
+.theader--row {
+  background-color: #7950f2;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.theader--row > th {
+  width: 40rem;
+  padding: 1.6rem;
+}
+
+.table--body {
+  max-height: 100vh;
+}

@@ -31,7 +31,7 @@
   padding: 0.8rem;
   border-radius: 0.6rem;
 }
-.header-logout {
+/* .header-logout {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,8 @@
   color: white;
   background-color: #7950f2;
   border-radius: 50%;
-}
+} */
+
 .header-logout > * {
   width: 2.4rem !important;
   height: 2.4rem !important;

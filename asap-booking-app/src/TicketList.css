@@ -30,7 +30,7 @@
   border-radius: 40px;
 }
 /* styling the desk, and the Ticket status dropedown menues */
-.ticketList--menuDesk,
+.ticketList--menuService,
 .ticketList--menuTicketStatus {
   position: relative;
   flex: 0.25;
@@ -43,7 +43,7 @@
   flex-grow: 1;
 }
 .ticketList--menuTicketStatus::before,
-.ticketList--menuDesk::before {
+.ticketList--menuService::before {
   content: "";
   position: absolute;
   left: -2rem;
@@ -52,11 +52,11 @@
   margin-left: 1rem;
   padding: 0.4px;
 }
-.ticketList--menuDeskNumber,
+.ticketList--menuServiceNumber,
 .ticketList--menuTicketStatusNumber {
   border: none;
   outline: 0;
-  width: 12rem;
+  width: 18rem;
 }
 
 /* styling the table */
@@ -85,5 +85,4 @@
 .table--body {
   max-height: 100vh;
   overflow: scroll;
-  /* background-color: red; */
 }
