@@ -7,7 +7,7 @@ function Header() {
     <div className="header">
       <h1 className="header--title"> ZAYED UNIVERSITY</h1>
       <a className="header-logout" href="#">
-        <NotificationsNoneOutlinedIcon />
+        {/* <NotificationsNoneOutlinedIcon /> */}
       </a>
     </div>
   );

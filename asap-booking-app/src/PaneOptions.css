@@ -22,6 +22,13 @@
 .paneOptions > button:hover {
   color: #7950f2;
 }
+.btn.active {
+  color: #7950f2 !important;
+}
+.btn.inactive {
+  color: white !important;
+}
+
 .paneOptions--icon {
   width: 2.4rem !important;
   height: 2.4rem !important;
